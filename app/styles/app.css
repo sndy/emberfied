@@ -166,7 +166,7 @@ a:focus {
 
 @media(min-width:768px) {
     .intro {
-        height: 100%;
+        height: auto;
         padding: 0;
     }
 
@@ -486,4 +486,8 @@ body {
         position: relative;
         margin-right: 0;
     }
+}
+
+.dropdown {
+    cursor: pointer;
 }

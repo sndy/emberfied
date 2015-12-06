@@ -1,5 +1,25 @@
-  {{#if session.isAuthenticated}}
-    <p><a  action 'invalidateSession' >Logout</a></p>}}
-  {{else}}
-    <p><a  action 'sessionRequiresAuthentication' >Login</a></p>}}
-  {{/if}}
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a>Dashboard</a>
+            </li>
+            <li>
+                {{#link-to 'index'}}Home{{/link-to}}
+            </li>
+            <li>
+                <a href="dashboard/#world-map">World Map</a>
+            </li>
+        </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="world-map" class="col-lg-12">
+                    <h4>Map</h4>
+                    {{world-map}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
