@@ -401,10 +401,10 @@ body {
 
 #page-content-wrapper {
     width: 100%;
-    position: absolute;
+    position: relative;
+    height: 100%;
     padding: 15px;
-    background-color: #fff;
-    font-color: #000;
+    background-color: #000;
 }
 
 #wrapper.toggled #page-content-wrapper {
