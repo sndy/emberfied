@@ -403,7 +403,7 @@ body {
     position: relative;
     height: 100%;
     padding: 15px;
-    background-color: #000;
+    background-color: #fff;
 }
 
 #wrapper.toggled #page-content-wrapper {

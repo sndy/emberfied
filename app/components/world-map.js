@@ -3,22 +3,30 @@ import ConfigMixin from 'emberfied/mixins/map-config';
 
 export default Ember.Component.extend(ConfigMixin, {
 	title: null,
-	type: 'worldPopulationDensity',
+	type: null,
 	dataSeriesName: null,
 	setupMap: function () {
-		var config = this.get('Config.' + this.get('type'));
-		jQuery.getJSON(config.dataUrl, (data)=> {
-			config.optionsConfig.series.every((item)=>{
-				if (item.name === this.get('dataSeriesName')) {
-					item.data = data;
-					return false;
-				}
-				return true;
-			});
-	        this.$('.map-area').highcharts('Map', config.optionsConfig);
-	    });
-	},
-	renderMap: function () {
-	    Ember.run.scheduleOnce('afterRender', this, this.setupMap);
-	}.on('didInsertElement')
+		if (this.get('type')) {
+			var config = this.get('Config.' + this.get('type'));
+			if (this.$('.map-area').highcharts()) {
+				this.$('.map-area').highcharts().showLoading();
+			}
+			jQuery.getJSON(config.dataUrl, (data)=> {
+				config.optionsConfig.series.every((item, i)=>{
+					if (item.name === this.get('dataSeriesName')) {
+						this.$('.map-area').highcharts('Map', JSON.parse(JSON.stringify(config.optionsConfig)));
+						this.$('.map-area').highcharts().series[i].setData(data, true, true, true);
+						this.$('.map-area').highcharts().hideLoading();
+						return false;
+					}
+					return true;
+				});
+		    });
+		}
+	}.on('didInsertElement'),
+	typeObserver: Ember.observer('type', function () {
+		if (this.get('type')) {
+			this.setupMap();	
+		}
+	})
 });

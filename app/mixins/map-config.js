@@ -5,11 +5,24 @@ export default Ember.Mixin.create({
         worldPopulationDensity: {
 			dataUrl: 'https://www.highcharts.com/samples/data/jsonp.php?filename=world-population-density.json&callback=?',
 			optionsConfig: {
+	            chart : {
+	                borderWidth : 1
+	            },
 	            title : {
 	                text : 'Map Component'
 	            },
 	            credits: {
 		        	enabled: false
+		        },
+		        loading: {
+		            hideDuration: 1000,
+            		showDuration: 1000,
+            		labelStyle: {
+		                color: 'white'
+		            },
+		            style: {
+		                backgroundColor: 'gray'
+		            }
 		        },
 	            mapNavigation: {
 	                enabled: true,
@@ -20,7 +33,7 @@ export default Ember.Mixin.create({
 	                max: 1000,
 	                type: 'logarithmic'
 	            },
-	            series : [{
+	            series : Ember.A([{
 	                mapData: Highcharts.maps['custom/world'],
 	                joinBy: ['iso-a2', 'code'],
 	                name: 'Population density',
@@ -32,15 +45,25 @@ export default Ember.Mixin.create({
 	                tooltip: {
 	                    valueSuffix: '/km²'
 	                }
-	            }]
+	            }])
 	        }
         },
-        worldPopulation: {
+        worldPopulationBubble: {
         	dataUrl: 'https://www.highcharts.com/samples/data/jsonp.php?filename=world-population.json&callback=?',
         	optionsConfig: {
 	            chart : {
 	                borderWidth : 1
 	            },
+	            loading: {
+		            hideDuration: 1000,
+            		showDuration: 1000,	            	
+		            labelStyle: {
+		                color: 'white'
+		            },
+		            style: {
+		                backgroundColor: 'gray'
+		            }
+		        },
 	            title: {
 	                text: 'World population 2013 by country'
 	            },
@@ -59,7 +82,7 @@ export default Ember.Mixin.create({
 	                    verticalAlign: 'bottom'
 	                }
 	            },
-	            series : [{
+	            series : Ember.A([{
 	                name: 'Countries',
 	                color: '#E0E0E0',
 	                enableMouseTracking: false,
@@ -74,13 +97,26 @@ export default Ember.Mixin.create({
 	                tooltip: {
 	                    pointFormat: '{point.code}: {point.z} thousands'
 	                }
-	            }]
+	            }])
 	        }
         },
         worldMapFixedTooltip: {
         	dataUrl: 'https://www.highcharts.com/samples/data/jsonp.php?filename=world-population-density.json&callback=?',
         	optionsConfig: {
-        		title: {
+        		chart : {
+	                borderWidth : 1
+	            },
+	            loading: {
+		            hideDuration: 1000,
+            		showDuration: 1000,
+		            labelStyle: {
+		                color: 'white'
+		            },
+		            style: {
+		                backgroundColor: 'gray'
+		            }
+		        },
+	            title: {
 	                text: 'Fixed tooltip with HTML'
 	            },
 	            legend: {
@@ -114,7 +150,7 @@ export default Ember.Mixin.create({
 	                max: 1000,
 	                type: 'logarithmic'
 	            },
-	            series : [{
+	            series : Ember.A([{
 	                mapData: Highcharts.maps['custom/world'],
 	                joinBy: ['iso-a2', 'code'],
 	                name: 'Population density Fixed HTML',
@@ -123,7 +159,7 @@ export default Ember.Mixin.create({
 	                        color: '#BADA55'
 	                    }
 	                }
-	            }]
+	            }])
         	}
         }
     }

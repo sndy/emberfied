@@ -40,7 +40,12 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+      ENV.minifyCSS = {
+          enabled: true,
+      };
+      ENV.minifyJS = {
+          enabled: true,
+      };
   }
 
   ENV.contentSecurityPolicy = {
