@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ember.js UI studio- Emberfied</title>
-    <meta name="description" content="Ember.js UI studio- Emberfied">
+    <meta name="description" content="UI studio built using Ember.js !! Demonstrates ember components- Charts, Maps created using HighCharts. Many more in the making...">
+    <meta name="keywords" content="Ember.js, Emberjs, Ember Web Application, Ember application, JavaScript apps, emberjs framework, UI Development, Ember Web Development, Ambitious Web app, introduction, beginners, ember tutorial, UI studio, emberfied, ember components, responsive web design, web components, ember how to, ember dashboard, Highcharts">
+    <meta name="fragment" content="!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{content-for 'head'}}
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -13,7 +15,18 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"type="text/css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kaushan+Script'type='text/css'>
     <!-- Piwik -->
-    <script src="piwik.js"></script>
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//www.emberfied.com/analytics/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
     <noscript><p><img src="//www.emberfied.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
     <!-- End Piwik Code -->
     {{content-for 'head-footer'}}

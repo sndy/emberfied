@@ -16,6 +16,10 @@ export default Ember.Route.extend(ConfigMixin, {
         },
         reDraw (param) {
         	Ember.$('#' + param).highcharts().redraw();
+        },
+        didTransition () {
+            this._super.apply(this, arguments);
+            _paq.push(['trackEvent', 'Vists', 'RouteTraversed', 'Dashboard']);
         }
     }
 });

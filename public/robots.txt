@@ -1,3 +1,6 @@
 # http://www.robotstxt.org
 User-agent: *
-Disallow:
+Disallow: /fonts-awesome/
+Disallow: /fonts/
+Disallow: /less/
+Disallow: /analytics/

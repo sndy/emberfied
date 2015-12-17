@@ -4,7 +4,9 @@
     "window",
     "-Promise",
     "jQuery",
-    "Highcharts"
+    "Highcharts",
+    "_paq",
+    "require"
 
   ],
   "browser": true,
