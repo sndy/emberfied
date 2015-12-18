@@ -15,7 +15,7 @@ export default Ember.Route.extend(ConfigMixin, {
             this.get('session').invalidate();
         },
         reDraw (param) {
-        	Ember.$('#' + param).highcharts().redraw();
+            Ember.$('#' + param).highcharts().redraw();
         },
         didTransition () {
             this._super.apply(this, arguments);
