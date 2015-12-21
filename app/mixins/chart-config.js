@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Mixin.create({
     Config: {
         combinationChart: {
+        chart: {},
         title: {
             text: 'Combination chart'
         },
@@ -64,7 +65,7 @@ export default Ember.Mixin.create({
             }
         }]
     },
-        donut: {
+    donut: {
         chart: {
             type: 'pie',
             options3d: {
