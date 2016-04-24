@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import ConfigMixin from 'emberfied/mixins/dashboard-config';
+import RouteTracker from '../mixins/route-tracker';
 
-export default Ember.Route.extend(ConfigMixin, {
+export default Ember.Route.extend(ConfigMixin, RouteTracker, {
     setupController (controller) {
         this._super.apply(this, arguments);
         if (this.Config) {
@@ -16,10 +17,6 @@ export default Ember.Route.extend(ConfigMixin, {
         },
         reDraw (param) {
             Ember.$('#' + param).highcharts().redraw();
-        },
-        didTransition () {
-            this._super.apply(this, arguments);
-            _paq.push(['trackEvent', 'Vists', 'RouteTraversed', 'Dashboard']);
         }
     }
 });

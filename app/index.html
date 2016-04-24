@@ -23,13 +23,15 @@
         var u='//www.emberfied.com/analytics/';
         _paq.push(['setTrackerUrl', u+'piwik.php']);
         _paq.push(['setSiteId', 1]);
+        _paq.push(['appendToTrackingUrl', 'rec=1']);
+        _paq.push(['appendToTrackingUrl', 'bots=1']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
       })();
     </script>
     <noscript>
       <p style='text-align: center;'>
-      <img src='//www.emberfied.com/analytics/piwik.php?idsite=1' style='border:0;' alt='' />
+      <img src="//www.emberfied.com/analytics/piwik.php?idsite=1&rec=1&bots=1" style='border:0;' alt='' />
         For full functionality of this site it is necessary to enable JavaScript.<br/>
         Here are the <a href='http://www.enable-javascript.com/' target='_blank'>
         instructions how to enable JavaScript in your web browser</a>.
