@@ -811,3 +811,14 @@ body {
 #ref {
     display: none;
 }
+
+#uiStudio {
+    padding: 4px;
+    border-radius: 18px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.instructions{
+    position: absolute;
+    bottom: 30px;
+}
