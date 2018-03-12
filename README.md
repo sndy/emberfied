@@ -2,7 +2,7 @@
 
 UI studio built using Ember.js !! Demonstrates ember components- Charts, Maps created using HighCharts. Many more in the making...
 [Click here](http://sndy.in)
-
+![sndy](/sndy.png "This is how it looks")
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
